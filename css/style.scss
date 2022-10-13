@@ -1,0 +1,561 @@
+@font-face {
+    font-family: Fredoka One;
+    src: url(/font/FredokaOne-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$cursive : Fredoka One;
+$oyen : #EC4F0A;
+$abu : #4d4d4d;
+$icon : 80px;
+$font: 'Fredoka One';
+
+.container {
+    width: 100vw;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+    padding: 0 15px;
+
+
+
+    .apk {
+        display: flex;
+        font-family: 'Fredoka One';
+        font-size: 1.5em;
+        color: $abu;
+
+        .changeText {
+            color: $abu;
+        }
+    }
+
+    .product {
+        font-family: 'Fredoka One';
+        font-size: 1.2em;
+        color: $oyen;
+    }
+}
+
+nav {
+    display: grid;
+    grid-template-areas:
+        'hero hero core memory'
+        'hero hero batery gpu'
+    ;
+    grid-auto-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 150px 150px;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    .hero {
+        grid-area: hero;
+        // background-color: white;
+        opacity: 0;
+        transform: translate(-2000px, 0);
+        transition: 3s;
+        border: 3px solid $oyen ;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .hero-image {
+            width: 400px;
+            height: 250px;
+            background-image: url(../img/laptop.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-text {
+            color: $abu;
+            font-family: $font;
+        }
+    }
+
+    .core {
+        grid-area: core;
+        // background-color: blue;
+        opacity: 0;
+        // transform: translate(2000px, 0);
+        transition: 5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid $oyen ;
+        border-radius: 15px;
+        font-family: $cursive;
+
+        .icon {
+            background-image: url(../img/core.png);
+            background-size: cover;
+            width: $icon;
+            height: $icon;
+        }
+
+        .text {
+            color: $abu;
+        }
+    }
+
+    .memory {
+        grid-area: memory;
+        // background-color: green;
+        opacity: 0;
+        transform: translate(2000px, 0);
+        transition: 3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid $oyen ;
+        border-radius: 15px;
+        font-family: $cursive;
+
+        .icon {
+            background-image: url(../img/memory.png);
+            background-size: cover;
+            width: $icon;
+            height: $icon;
+        }
+
+        .text {
+            color: $abu;
+        }
+    }
+
+    .batery {
+        grid-area: batery;
+        // background-color: blue;
+        opacity: 0;
+        // transform: translate(2000px, 0);
+        transition: 5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid $oyen ;
+        border-radius: 15px;
+        font-family: $cursive;
+
+        .icon {
+            background-image: url(../img/batery.png);
+            background-position: center;
+            background-size: cover;
+            width: $icon;
+            height: $icon;
+        }
+
+        .text {
+            color: $abu;
+        }
+    }
+
+    .gpu {
+        grid-area: gpu;
+        // background-color: green;
+        opacity: 0;
+        transform: translate(2000px, 0);
+        transition: 3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 3px solid $oyen ;
+        border-radius: 15px;
+        font-family: $cursive;
+
+        .icon {
+            background-image: url(../img/gpu.png);
+            background-position: center;
+            background-size: cover;
+            width: $icon;
+            height: $icon;
+        }
+
+        .text {
+            color: $abu;
+        }
+    }
+
+
+
+
+    .hero.start,
+    .core.start,
+    .batery.start,
+    .memory.start,
+    .gpu.start {
+        opacity: 1;
+        transform: translate(0, 0);
+
+    }
+}
+
+.about {
+    font-size: 2em;
+    text-align: center;
+    font-family: $font;
+    color: $abu;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+
+    .desc {
+        width: 85%;
+        // height: 400px;
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+        margin-bottom: 15px;
+        font-family: sans-serif;
+        // background-color: #000;
+
+        .break {
+            width: 2px;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .left {
+            text-align: right;
+            opacity: 0;
+            transform: translate(-5000px, 0);
+            transition: 3.5s;
+            color: $abu;
+        }
+
+        .left::selection {
+            color: white;
+            background-color: $oyen;
+        }
+
+        .right::selection {
+            color: $oyen;
+            background-color: white;
+        }
+
+        .right {
+            text-align: left;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: $oyen;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translate(5000px, 0);
+            transition: 3.5s;
+            color: white;
+        }
+
+        .left.start,
+        .right.start {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+
+
+}
+
+footer {
+    background-color: $abu;
+    // display: flex;
+    // justify-content: space-between;
+    // height: 500px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    font-family: $font;
+
+    .tittle {
+        text-align: center;
+        color: white;
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+
+    .profile {
+        display: flex;
+        justify-content: space-evenly;
+        opacity: 0;
+        transform: translate(0, 200px);
+        transition: 0.8s;
+
+        a {
+            text-decoration: none;
+        }
+
+        // opacity: 0;
+        // transition: 3s;
+
+        .profile-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+
+
+
+            .picture {
+                width: 180px;
+                height: 180px;
+                background-color: white;
+            }
+
+            .picture.om {
+                background-image: url(../img/om.jpg);
+                background-size: cover;
+            }
+
+            .picture.ky {
+                background-image: url(../img/ky.jpg);
+                background-size: cover;
+            }
+
+            .picture.dil {
+                background-image: url(../img/dil.jpg);
+                background-size: cover;
+            }
+
+            .name {
+                color: #ddd;
+                margin-top: 15px;
+                font-size: 1.2em;
+                margin-bottom: 8px;
+                font-family: sans-serif;
+            }
+        }
+
+        .sosmed {
+
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            .icon {
+                background-image: url(../img/instagram.png);
+                width: 25px;
+                height: 25px;
+                background-size: cover;
+            }
+
+            .instagram {
+                color: $oyen;
+                font-family: sans-serif;
+            }
+        }
+    }
+
+    .profile.start {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .copyright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-image: url(../img/logo13.png);
+            background-size: cover;
+        }
+
+        .copyright-text {
+            color: white;
+            font-family: sans-serif;
+
+            a {
+                text-decoration: none;
+                color: $oyen;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    header {
+        padding: 0 12px;
+
+        .apk {
+            font-size: 0.9em;
+        }
+
+        .product {
+            font-size: 0.9em;
+        }
+    }
+
+    nav {
+        width: auto;
+        grid-template-areas:
+            'hero hero'
+            'hero hero'
+            'core memory'
+            'batery gpu'
+        ;
+        grid-auto-columns: 1fr 1fr;
+        grid-auto-rows: 150px 150px 150px;
+
+        .hero {
+            .hero-image {
+                width: 350px;
+                height: 230px;
+                background-image: url(../img/laptop.png);
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        .core,
+        .gpu,
+        .memory,
+        .batery {
+            padding-left: 3px;
+            padding-bottom: 10px;
+
+            .text {
+                font-size: 0.9em;
+                text-align: center;
+            }
+        }
+    }
+
+    .about {
+        font-size: 1.5em;
+    }
+
+    main {
+
+
+        .desc {
+            flex-direction: column;
+            font-size: 0.9em;
+
+            .left,
+            .right {
+                text-align: justify;
+
+            }
+
+            .left.start,
+            .right.start {
+                opacity: 0;
+            }
+
+            .left.start.go,
+            .right.start.go {
+                transform: translate(0, 0);
+                transition: 0.8s;
+                opacity: 1;
+            }
+        }
+    }
+
+    footer {
+
+        .tittle {
+            font-size: 1.2em;
+        }
+
+
+
+        .profile {
+            flex-direction: column;
+
+            .profile-item {
+
+
+                .name {
+                    font-size: 0.9em;
+                }
+
+                .sosmed {
+                    .icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    .instagram {
+                        font-size: 0.8em;
+                    }
+                }
+
+                .picture {
+                    width: 130px;
+                    height: 130px;
+
+
+                }
+
+
+            }
+        }
+
+
+
+        .copyright {
+            gap: 5px;
+
+            .logo {
+                width: 23px;
+                height: 23px;
+            }
+
+            .copyright-text {
+                font-size: 0.6em;
+            }
+        }
+
+    }
+}
+
+
+
+// @media screen {
+//     nav {
+//         grid-template-areas:
+//             'hero hero'
+//             'core memory'
+//             'batery gpu'
+//         ;
+//         grid-auto-rows: 1fr 1fr;
+//         grid-auto-columns: 150px;
+//     }
+// }

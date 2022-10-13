@@ -1,0 +1,425 @@
+@font-face {
+  font-family: Fredoka One;
+  src: url(/font/FredokaOne-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+body {
+  width: 100vw;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 25px;
+  padding: 0 15px;
+}
+header .apk {
+  display: flex;
+  font-family: "Fredoka One";
+  font-size: 1.5em;
+  color: #4d4d4d;
+}
+header .apk .changeText {
+  color: #4d4d4d;
+}
+header .product {
+  font-family: "Fredoka One";
+  font-size: 1.2em;
+  color: #EC4F0A;
+}
+
+nav {
+  display: grid;
+  grid-template-areas: "hero hero core memory" "hero hero batery gpu";
+  grid-auto-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 150px 150px;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+nav .hero {
+  grid-area: hero;
+  opacity: 0;
+  transform: translate(-2000px, 0);
+  transition: 3s;
+  border: 3px solid #EC4F0A;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+nav .hero .hero-image {
+  width: 400px;
+  height: 250px;
+  background-image: url(../img/laptop.png);
+  background-size: cover;
+  background-position: center;
+}
+nav .hero .hero-text {
+  color: #4d4d4d;
+  font-family: "Fredoka One";
+}
+nav .core {
+  grid-area: core;
+  opacity: 0;
+  transition: 5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #EC4F0A;
+  border-radius: 15px;
+  font-family: Fredoka One;
+}
+nav .core .icon {
+  background-image: url(../img/core.png);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+nav .core .text {
+  color: #4d4d4d;
+}
+nav .memory {
+  grid-area: memory;
+  opacity: 0;
+  transform: translate(2000px, 0);
+  transition: 3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #EC4F0A;
+  border-radius: 15px;
+  font-family: Fredoka One;
+}
+nav .memory .icon {
+  background-image: url(../img/memory.png);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+nav .memory .text {
+  color: #4d4d4d;
+}
+nav .batery {
+  grid-area: batery;
+  opacity: 0;
+  transition: 5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #EC4F0A;
+  border-radius: 15px;
+  font-family: Fredoka One;
+}
+nav .batery .icon {
+  background-image: url(../img/batery.png);
+  background-position: center;
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+nav .batery .text {
+  color: #4d4d4d;
+}
+nav .gpu {
+  grid-area: gpu;
+  opacity: 0;
+  transform: translate(2000px, 0);
+  transition: 3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #EC4F0A;
+  border-radius: 15px;
+  font-family: Fredoka One;
+}
+nav .gpu .icon {
+  background-image: url(../img/gpu.png);
+  background-position: center;
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+}
+nav .gpu .text {
+  color: #4d4d4d;
+}
+nav .hero.start,
+nav .core.start,
+nav .batery.start,
+nav .memory.start,
+nav .gpu.start {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.about {
+  font-size: 2em;
+  text-align: center;
+  font-family: "Fredoka One";
+  color: #4d4d4d;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+main .desc {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 15px;
+  font-family: sans-serif;
+}
+main .desc .break {
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+}
+main .desc .left {
+  text-align: right;
+  opacity: 0;
+  transform: translate(-5000px, 0);
+  transition: 3.5s;
+  color: #4d4d4d;
+}
+main .desc .left::-moz-selection {
+  color: white;
+  background-color: #EC4F0A;
+}
+main .desc .left::selection {
+  color: white;
+  background-color: #EC4F0A;
+}
+main .desc .right::-moz-selection {
+  color: #EC4F0A;
+  background-color: white;
+}
+main .desc .right::selection {
+  color: #EC4F0A;
+  background-color: white;
+}
+main .desc .right {
+  text-align: left;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #EC4F0A;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translate(5000px, 0);
+  transition: 3.5s;
+  color: white;
+}
+main .desc .left.start,
+main .desc .right.start {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+footer {
+  background-color: #4d4d4d;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+  font-family: "Fredoka One";
+}
+footer .tittle {
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+footer .profile {
+  display: flex;
+  justify-content: space-evenly;
+  opacity: 0;
+  transform: translate(0, 200px);
+  transition: 0.8s;
+}
+footer .profile a {
+  text-decoration: none;
+}
+footer .profile .profile-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .profile .profile-item .picture {
+  width: 180px;
+  height: 180px;
+  background-color: white;
+}
+footer .profile .profile-item .picture.om {
+  background-image: url(../img/om.jpg);
+  background-size: cover;
+}
+footer .profile .profile-item .picture.ky {
+  background-image: url(../img/ky.jpg);
+  background-size: cover;
+}
+footer .profile .profile-item .picture.dil {
+  background-image: url(../img/dil.jpg);
+  background-size: cover;
+}
+footer .profile .profile-item .name {
+  color: #ddd;
+  margin-top: 15px;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  font-family: sans-serif;
+}
+footer .profile .sosmed {
+  border-radius: 8px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+footer .profile .sosmed .icon {
+  background-image: url(../img/instagram.png);
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+footer .profile .sosmed .instagram {
+  color: #EC4F0A;
+  font-family: sans-serif;
+}
+footer .profile.start {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+footer .copyright .logo {
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/logo13.png);
+  background-size: cover;
+}
+footer .copyright .copyright-text {
+  color: white;
+  font-family: sans-serif;
+}
+footer .copyright .copyright-text a {
+  text-decoration: none;
+  color: #EC4F0A;
+}
+
+@media only screen and (max-width: 700px) {
+  header {
+    padding: 0 12px;
+  }
+  header .apk {
+    font-size: 0.9em;
+  }
+  header .product {
+    font-size: 0.9em;
+  }
+  nav {
+    width: auto;
+    grid-template-areas: "hero hero" "hero hero" "core memory" "batery gpu";
+    grid-auto-columns: 1fr 1fr;
+    grid-auto-rows: 150px 150px 150px;
+  }
+  nav .hero .hero-image {
+    width: 350px;
+    height: 230px;
+    background-image: url(../img/laptop.png);
+    background-size: cover;
+    background-position: center;
+  }
+  nav .core,
+nav .gpu,
+nav .memory,
+nav .batery {
+    padding-left: 3px;
+    padding-bottom: 10px;
+  }
+  nav .core .text,
+nav .gpu .text,
+nav .memory .text,
+nav .batery .text {
+    font-size: 0.9em;
+    text-align: center;
+  }
+  .about {
+    font-size: 1.5em;
+  }
+  main .desc {
+    flex-direction: column;
+    font-size: 0.9em;
+  }
+  main .desc .left,
+main .desc .right {
+    text-align: justify;
+  }
+  main .desc .left.start,
+main .desc .right.start {
+    opacity: 0;
+  }
+  main .desc .left.start.go,
+main .desc .right.start.go {
+    transform: translate(0, 0);
+    transition: 0.8s;
+    opacity: 1;
+  }
+  footer .tittle {
+    font-size: 1.2em;
+  }
+  footer .profile {
+    flex-direction: column;
+  }
+  footer .profile .profile-item .name {
+    font-size: 0.9em;
+  }
+  footer .profile .profile-item .sosmed .icon {
+    width: 20px;
+    height: 20px;
+  }
+  footer .profile .profile-item .sosmed .instagram {
+    font-size: 0.8em;
+  }
+  footer .profile .profile-item .picture {
+    width: 130px;
+    height: 130px;
+  }
+  footer .copyright {
+    gap: 5px;
+  }
+  footer .copyright .logo {
+    width: 23px;
+    height: 23px;
+  }
+  footer .copyright .copyright-text {
+    font-size: 0.6em;
+  }
+}/*# sourceMappingURL=style.css.map */
